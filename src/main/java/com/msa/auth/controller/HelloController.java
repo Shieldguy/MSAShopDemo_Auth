@@ -2,7 +2,9 @@ package com.msa.auth.controller;
 
 import com.msa.auth.domain.ResponseData;
 import com.msa.auth.domain.types.ResultString;
+import com.msa.common.service.LoggingService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,9 @@ import java.security.Principal;
 @RestController()
 @Slf4j
 public class HelloController {
+    @Autowired
+    private LoggingService loggingService;
+
     @GetMapping(value = "/hello", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<ResponseData> hello(Principal principal) {
         ResponseData rspData = null;

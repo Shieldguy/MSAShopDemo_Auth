@@ -10,7 +10,7 @@ spring:
       ddl-auto: create
       dynamic-update: true
     generate-ddl: true
-    show-sql: false
+    show-sql: true
   datasource:
     driverClassName: org.hsqldb.jdbcDriver
     name: testdb
@@ -21,9 +21,15 @@ logging:
   level:
     org:
       hibernate:
-        type: info
-    com:
-      msa:
         type: debug
+    com:
+      msa: debug
 server:
   port: 8081
+kafka:
+  bootstrap-servers: localhost:9092
+  client-id: 0
+  template:
+    default-topic: msashop
+  consumer:
+    group-id: 0
