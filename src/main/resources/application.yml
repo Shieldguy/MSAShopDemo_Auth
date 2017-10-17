@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: MSAShop_Auth
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  jpa:
+    hibernate:
+      ddl-auto: create
+      dynamic-update: true
+    generate-ddl: true
+    show-sql: false
+  datasource:
+    driverClassName: org.hsqldb.jdbcDriver
+    name: testdb
+  session:
+    store-type: jdbc
+    timeout: 30
+logging:
+  level:
+    org:
+      hibernate:
+        type: info
+    com:
+      msa:
+        type: debug
+server:
+  port: 8081

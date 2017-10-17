@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.msa'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	compile('org.springframework.boot:spring-boot-starter-cache')
+	compile('org.apache.cxf:cxf-spring-boot-starter-jaxrs:3.1.11')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.kafka:spring-kafka')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.session:spring-session')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-websocket')
+	compile('org.springframework.boot:spring-boot-starter-tomcat')
+	runtime('org.hsqldb:hsqldb')
+
+	// jsr310 - for jsonMapper to deserialize LocalDate
+	compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.0')
+	// for data binding character
+	compile('com.fasterxml.jackson.core:jackson-core:2.9.0')
+	compile('com.fasterxml.jackson.core:jackson-databind:2.9.0')
+	compile('com.fasterxml.jackson.core:jackson-annotations:2.9.0')
+
+	compile('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.security:spring-security-test')
+}
