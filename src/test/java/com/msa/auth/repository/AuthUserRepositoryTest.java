@@ -1,8 +1,8 @@
 package com.msa.auth.repository;
 
-import com.msa.common.domain.AuthUser;
-import com.msa.common.domain.UserRole;
-import com.msa.common.domain.types.RoleType;
+import com.msa.auth.domain.AuthUser;
+import com.msa.auth.domain.UserRole;
+import com.msa.auth.domain.types.RoleType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
